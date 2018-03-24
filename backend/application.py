@@ -168,7 +168,7 @@ def updateDonation():
     except:
         return Response('Unable to update donation', status=500)
     return Response('Success', status=200)
-    
+
 
 @app.route("/api/markPickedUp", methods=['POST'])
 def markAsPickedUp():
@@ -215,4 +215,6 @@ def addDonation():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(
+    host=os.getenv('LISTEN', '0.0.0.0'),
+    port=int(os.getenv('PORT', '80')))
