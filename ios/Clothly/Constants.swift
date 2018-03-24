@@ -7,5 +7,5 @@
 //
 
 
-let BASE_URL = "http://54.175.31.104:80/api/"
+let BASE_URL = "http://18.233.102.67/api/"
 
