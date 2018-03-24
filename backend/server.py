@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response, json
 import pymysql.cursors
 import datetime
 
@@ -11,16 +11,16 @@ def home():
 
 @app.route("/api/createDonor", methods=['GET', 'POST'])
 def donorRegister():
-    myData = {"firstName": "Danny", "lastName": "Lin", "password": "hackerman123", "address": "6 Metrotech Center", "city": "Brooklyn", "state": "New York", "zip": 11201, "emailAddress": "danny.lin@nyu.edu", "phoneNumber": "19173990398"}
-    firstName = myData["firstName"]
-    lastName = myData["lastName"]
-    password = myData["password"]
-    address = myData["address"]
-    city = myData["city"]
-    state = myData["state"]
-    zipcode = myData["zip"]
-    email = myData["emailAddress"]
-    phoneNumber = myData["phoneNumber"]
+    content = request.json
+    firstName = content["firstName"]
+    lastName = content["lastName"]
+    password = content["password"]
+    address = content["address"]
+    city = content["city"]
+    state = content["state"]
+    zipcode = content["zip"]
+    email = content["emailAddress"]
+    phoneNumber = content["phoneNumber"]
 
     query = 'INSERT INTO donor (firstName, lastName, password, address, city, state, zip, emailAddress, phoneNumber) VALUES ("%s", "%s", "%s", "%s", "%s", "%s", %d, "%s", "%s");' % (
         firstName, lastName, password, address, city, state, zipcode, email, phoneNumber)
@@ -29,22 +29,87 @@ def donorRegister():
             cursor.execute(query)
             connection.commit()
     except:
-        print("error")
-    return "hello"
+        return Response('Error', status=500)
+    return Response('Success', status=200)
+
+
+@app.route("/api/createOrganization", methods=['GET', 'POST'])
+def organizationRegister():
+    content = request.json
+    firstName = content["firstName"]
+    lastName = content["lastName"]
+    orgType = content["orgType"]
+    password = content["password"]
+    address = content["address"]
+    city = content["city"]
+    state = content["state"]
+    zipcode = content["zip"]
+    email = content["emailAddress"]
+    phoneNumber = content["phoneNumber"]
+
+    query = 'INSERT INTO organization (firstName, lastName, password, address, city, state, zip, emailAddress, phoneNumber, orgType) VALUES ("%s", "%s", "%s", "%s", "%s", "%s", %d, "%s", "%s", "%s");' % (
+        firstName, lastName, password, address, city, state, zipcode, email, phoneNumber, orgType)
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(query)
+            connection.commit()
+    except:
+        return Response('Error', status=500)
+    return Response('Success', status=200)
+
+@app.route("/api/donorLogin", methods=['GET', 'POST'])
+def donorLogin():
+    content = request.json
+    email = content["emailAddress"]
+    password = content["password"]
+    correctPassword = ""
+    query = 'SELECT password FROM donor WHERE emailAddress = "%s";' % (email)
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(query)
+            correctPassword = cursor.fetchone()[0]
+    except:
+        return Response('Error', status=500)
+    if password == correctPassword:
+        return Response('Success', status=200)
+    return Response('Wrong password', status=400)
+
+
+@app.route("/api/organizationLogin", methods=['GET', 'POST'])
+def organizationLogin():
+    content = request.json
+    email = content["emailAddress"]
+    password = content["password"]
+    correctPassword = ""
+    query = 'SELECT password FROM organization WHERE emailAddress = "%s";' % (email)
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(query)
+            correctPassword = cursor.fetchone()[0]
+    except:
+        return Response('Error', status=500)
+    if password == correctPassword:
+        return Response('Success', status=200)
+    return Response('Wrong password', status=400)
 
 @app.route("/api/getDonors", methods=['GET'])
 def getAllDonors():
     query = 'SELECT * FROM donor;'
     data = []
     try:
-        with connection.cursor() as cursor:
+        with connection.cursor(pymysql.cursors.DictCursor) as cursor:
             cursor.execute(query)
             data = cursor.fetchall()
             connection.commit()
     except:
-        return "error"
-    print(data)
-    return "success"
+        return Response('Unable to retrieve donors', status=500)
+    responseData = {
+        "data": data,
+        "count": len(data)
+    }
+    js = json.dumps(responseData)
+    resp = Response(js, status=200, mimetype='application/json')
+    return resp
 
 @app.route("/api/getDonations", methods=['GET'])
 def getDonations():
@@ -52,13 +117,18 @@ def getDonations():
     query = 'SELECT * FROM donation WHERE orgId = %d AND pickedUp = 0' % (orgId)
     data = []
     try:
-        with connection.cursor() as cursor:
+        with connection.cursor(pymysql.cursors.DictCursor) as cursor:
             cursor.execute(query)
             data = cursor.fetchall()
     except:
-        return "Error"
-    print(data)
-    return "success!"
+        return Response('Unable to retrieve donations', status=500)
+    responseData = {
+        "data": data,
+        "count": len(data)
+    }
+    js = json.dumps(responseData)
+    return Response(js, status=200, mimetype='application/json')
+    
 
 @app.route("/api/markPickedUp", methods=['POST'])
 def markAsPickedUp():
@@ -67,7 +137,7 @@ def markAsPickedUp():
     with connection.cursor() as cursor:
         cursor.execute(query)
         connection.commit()
-    return True
+    return Response('Success', status=200)
 
 @app.route("/api/deleteDonation", methods=['POST'])
 def deleteDonation():
@@ -78,30 +148,28 @@ def deleteDonation():
             cursor.execute(query)
             connection.commit()
     except:
-        return False
-    return True
+        return Response('Unable to delete donation', status=500)
+    return Response('Success', status=200)
 
 @app.route("/api/createDonation", methods=['GET', 'POST'])
 def addDonation():
-    now = datetime.datetime(2009, 5, 5)
-    myData = {"type": "Clothing", "gender": "M", "ageGroup": "Adult", "instructions": "N/A", "orgId": 1, "quantity": 10, "pickUpDate": now, "donorId": 1}
-    donationType = myData["type"]
-    gender = myData["gender"]
-    ageGroup = myData["ageGroup"]
-    instructions = myData["instructions"]
-    orgId = myData["orgId"]
-    quantity = myData["quantity"]
-    pickUpDate = myData["pickUpDate"]
-    donorId = myData["donorId"]
+    content = request.json
+    donationType = content["type"]
+    gender = content["gender"]
+    ageGroup = content["ageGroup"]
+    instructions = content["instructions"]
+    orgId = content["orgId"]
+    quantity = content["quantity"]
+    pickUpDate = content["pickUpDate"]
+    donorId = content["donorId"]
     query = 'INSERT INTO donation (type, gender, agegroup, instructions, orgId, quantity, pickUpDate, donorId) VALUES ("%s", "%s", "%s", "%s", %d, %d, "%s", %d);' % (donationType, gender, ageGroup, instructions, orgId, quantity, pickUpDate, donorId)
-    print(query)
     try:
         with connection.cursor() as cursor:
             cursor.execute(query)
             connection.commit()
     except:
-        return "error"
-    return "success"
+        return Response('Error', status=500)
+    return Response('Success', status=200)
 
 
 if __name__ == "__main__":
