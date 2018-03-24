@@ -124,6 +124,26 @@ def getAllDonors():
     resp = Response(js, status=200, mimetype='application/json')
     return resp
 
+
+@app.route("/api/getOrganizations", methods=['GET'])
+def getAllOrganizations():
+    query = 'SELECT * FROM organization;'
+    data = []
+    try:
+        with connection.cursor(pymysql.cursors.DictCursor) as cursor:
+            cursor.execute(query)
+            data = cursor.fetchall()
+            connection.commit()
+    except:
+        return Response('Unable to retrieve organizations', status=500)
+    responseData = {
+        "data": data,
+        "count": len(data)
+    }
+    js = json.dumps(responseData)
+    resp = Response(js, status=200, mimetype='application/json')
+    return resp
+
 @app.route("/api/getPendingDonations", methods=['GET'])
 def getPendingDonations():
     content = request.json

@@ -8,9 +8,14 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 class OrganizationPickViewController: UIViewController {
-    var data: Array<Dictionary<String, Any>> = [["orgName": "The Salvation Army", "orgId": 1, "orgType": "Salvation Army", "address": "2550 Benson Ave", "city": "Brooklyn", "state": "NY", "zip": 11214, "emailAddress": "danny.lin@nyu.edu", "phoneNumber": "9173990398"], ["orgName": "George's Church", "orgId": 2, "orgType": "Local Church", "address": "7214 18th Avenue", "city": "Brooklyn", "state": "NY", "zip": 11204, "emailAddress": "george.church@gmail.com", "phoneNumber": "7182343722"]]
+    var dataSource: [JSON] = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -19,6 +24,13 @@ class OrganizationPickViewController: UIViewController {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 75
         tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DataService.sharedInstance.getOrganizations { (data) in
+            self.dataSource = data["data"].array!
+        }
     }
     
     class func create() -> OrganizationPickViewController {
@@ -34,24 +46,24 @@ extension OrganizationPickViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return self.dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "OrganizationCell") as? OrganizationCell else {
             return UITableViewCell()
         }
-        let cellData = data[indexPath.row]
+        let cellData = self.dataSource[indexPath.row]
         var organization = Organization()
-        organization.name = cellData["orgName"] as? String
-        organization.type = cellData["orgType"] as? String
-        organization.id = cellData["orgId"] as? Int
-        organization.address = cellData["address"] as? String
-        organization.city = cellData["city"] as? String
-        organization.state = cellData["state"] as? String
-        organization.zip = cellData["zip"] as? Int
-        organization.phoneNumber = cellData["phoneNumber"] as? String
-        organization.emailAddress = cellData["emailAddress"] as? String
+        organization.name = cellData["orgName"].stringValue
+        organization.type = cellData["orgType"].stringValue
+        organization.id = cellData["orgId"].intValue
+        organization.address = cellData["address"].stringValue
+        organization.city = cellData["city"].stringValue
+        organization.state = cellData["state"].stringValue
+        organization.zip = cellData["zip"].intValue
+        organization.phoneNumber = cellData["phoneNumber"].stringValue
+        organization.emailAddress = cellData["emailAddress"].stringValue
         cell.organization = organization
         
         return cell

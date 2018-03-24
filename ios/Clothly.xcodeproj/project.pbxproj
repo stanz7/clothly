@@ -14,6 +14,7 @@
 		3089865720664E5200BADA26 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3089865620664E5200BADA26 /* Constants.swift */; };
 		30CFB5D72066EBA0008957B2 /* OrganizationPickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFB5D62066EBA0008957B2 /* OrganizationPickViewController.swift */; };
 		30CFB5D92066EF9C008957B2 /* OrganizationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFB5D82066EF9C008957B2 /* OrganizationCell.swift */; };
+		30CFB5DB2066FE93008957B2 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFB5DA2066FE93008957B2 /* DataService.swift */; };
 		3DEE1AF820660CC10051A9E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEE1AF720660CC10051A9E7 /* AppDelegate.swift */; };
 		3DEE1AFA20660CC10051A9E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEE1AF920660CC10051A9E7 /* MainViewController.swift */; };
 		3DEE1AFD20660CC10051A9E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEE1AFB20660CC10051A9E7 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		3089865620664E5200BADA26 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		30CFB5D62066EBA0008957B2 /* OrganizationPickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationPickViewController.swift; sourceTree = "<group>"; };
 		30CFB5D82066EF9C008957B2 /* OrganizationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationCell.swift; sourceTree = "<group>"; };
+		30CFB5DA2066FE93008957B2 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		3DEE1AF420660CC10051A9E7 /* Clothly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clothly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DEE1AF720660CC10051A9E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DEE1AF920660CC10051A9E7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				3089865420664DCA00BADA26 /* LoginManager.swift */,
+				30CFB5DA2066FE93008957B2 /* DataService.swift */,
 			);
 			path = "Helper Classes";
 			sourceTree = "<group>";
@@ -430,10 +433,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Clothly/Pods-Clothly-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -504,6 +509,7 @@
 				3089865720664E5200BADA26 /* Constants.swift in Sources */,
 				3089865020663BDF00BADA26 /* AffiliationViewController.swift in Sources */,
 				3089865520664DCA00BADA26 /* LoginManager.swift in Sources */,
+				30CFB5DB2066FE93008957B2 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
