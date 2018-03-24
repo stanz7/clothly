@@ -10,6 +10,12 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Bold</string>
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="ymW-T8-FRV">
@@ -87,17 +93,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9mj-1Y-IQ3">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email Address" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9mj-1Y-IQ3">
                                 <rect key="frame" x="30" y="263.5" width="315" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4ml-WO-NL5"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.63798048665421991" green="0.64022295223685777" blue="0.64695034898477155" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MlC-qN-Abw">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MlC-qN-Abw">
                                 <rect key="frame" x="30" y="314.5" width="315" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -121,12 +127,12 @@
                                     <action selector="signInPressedWithSender:" destination="Lne-3f-BrL" eventType="touchUpInside" id="Zej-r0-bxE"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLOTHLY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jG0-Bl-bMV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clothly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jG0-Bl-bMV">
                                 <rect key="frame" x="80" y="80" width="215" height="83.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jG0-Bl-bMV" secondAttribute="height" multiplier="103:40" id="tUO-GL-f4o"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -167,38 +173,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you a ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJk-PA-YEd">
-                                <rect key="frame" x="108.5" y="100" width="158" height="40"/>
+                                <rect key="frame" x="107" y="100" width="161" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BDo-VY-zVw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                 <color key="textColor" red="0.002877048682" green="0.39081662890000002" blue="0.7480532527" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gn-LL-Onw">
-                                <rect key="frame" x="70" y="345" width="235" height="80"/>
-                                <color key="backgroundColor" red="0.002877048682" green="0.39081662890000002" blue="0.7480532527" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="lFI-aK-tx4"/>
-                                </constraints>
-                                <state key="normal" title="Organization">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="organizationPressedWithSender:" destination="fsa-vv-GFj" eventType="touchUpInside" id="UDN-Tb-4PT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3I-zn-Xy4">
-                                <rect key="frame" x="70" y="240" width="235" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3I-zn-Xy4">
+                                <rect key="frame" x="75" y="172" width="225" height="197"/>
                                 <color key="backgroundColor" red="0.002877048682" green="0.39081662890000002" blue="0.7480532527" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="ljF-yR-mau"/>
                                 </constraints>
-                                <state key="normal" title="Donor">
+                                <state key="normal" title="Donor" image="Donor">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="donorPressedWithSender:" destination="fsa-vv-GFj" eventType="touchUpInside" id="sTQ-wR-xSh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gn-LL-Onw">
+                                <rect key="frame" x="75" y="397" width="225" height="218"/>
+                                <color key="backgroundColor" red="0.002877048682" green="0.39081662890000002" blue="0.7480532527" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="lFI-aK-tx4"/>
+                                </constraints>
+                                <state key="normal" title="Organization" image="Charity">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="organizationPressedWithSender:" destination="fsa-vv-GFj" eventType="touchUpInside" id="UDN-Tb-4PT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -222,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyx-ve-t8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="730" y="-25"/>
+            <point key="canvasLocation" x="728.79999999999995" y="-25.637181409295355"/>
         </scene>
         <!--Organization Sign In View Controller-->
         <scene sceneID="NIw-gF-uQC">
@@ -263,12 +269,12 @@
                                     <color key="titleColor" red="0.9484614978" green="0.9484614978" blue="0.9484614978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLOTHLY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHl-of-blJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clothly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHl-of-blJ">
                                 <rect key="frame" x="80" y="80" width="215" height="83.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jHl-of-blJ" secondAttribute="height" multiplier="103:40" id="exF-Tj-vvJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -302,6 +308,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Charity" width="610" height="610"/>
+        <image name="Donor" width="232" height="218"/>
         <image name="clothly" width="404" height="404"/>
     </resources>
 </document>
