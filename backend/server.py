@@ -7,7 +7,7 @@ connection = pymysql.connect(host="clothly.cxk0kbqodnhw.us-east-1.rds.amazonaws.
 
 @app.route("/")
 def home():
-    return "working 123"
+    return Response('No Content', status=204)
 
 @app.route("/api/createDonor", methods=['GET', 'POST'])
 def donorRegister():
@@ -111,10 +111,10 @@ def getAllDonors():
     resp = Response(js, status=200, mimetype='application/json')
     return resp
 
-@app.route("/api/getDonations", methods=['GET'])
-def getDonations():
-    orgId = 1
-    query = 'SELECT * FROM donation WHERE orgId = %d AND pickedUp = 0' % (orgId)
+@app.route("/api/getPendingDonations", methods=['GET'])
+def getPendingDonations():
+    donorId = 1
+    query = 'SELECT * FROM donation WHERE donorId = %d AND pickedUp = 0' % (donorId)
     data = []
     try:
         with connection.cursor(pymysql.cursors.DictCursor) as cursor:
@@ -128,11 +128,52 @@ def getDonations():
     }
     js = json.dumps(responseData)
     return Response(js, status=200, mimetype='application/json')
+
+
+@app.route("/api/getPastDonations", methods=['GET'])
+def getPastDonations():
+    donorId = 1
+    query = 'SELECT * FROM donation WHERE donorId = %d AND pickedUp = 1 ORDER BY pickUpDate DESC;' % (
+        donorId)
+    data = []
+    try:
+        with connection.cursor(pymysql.cursors.DictCursor) as cursor:
+            cursor.execute(query)
+            data = cursor.fetchall()
+    except:
+        return Response('Unable to retrieve donations', status=500)
+    responseData = {
+        "data": data,
+        "count": len(data)
+    }
+    js = json.dumps(responseData)
+    return Response(js, status=200, mimetype='application/json')
+
+@app.route("/api/updateDonation", methods=['POST'])
+def updateDonation():
+    content = request.json
+    donationType = content["type"]
+    gender = content["gender"]
+    ageGroup = content["ageGroup"]
+    instructions = content["instructions"]
+    quantity = content["quantity"]
+    pickUpDate = content["pickUpDate"]
+    donationId = content["donationId"]
+
+    query = 'UPDATE donation SET type = "%s", gender = "%s", ageGroup = "%s", instructions = "%s", quantity = %d, pickUpDate ="%s" WHERE donationId = %d' % (donationType, gender, ageGroup, instructions, quantity, pickUpDate, donationId)
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(query)
+            connection.commit()
+    except:
+        return Response('Unable to update donation', status=500)
+    return Response('Success', status=200)
     
 
 @app.route("/api/markPickedUp", methods=['POST'])
 def markAsPickedUp():
-    donationId = 1
+    content = request.json
+    donationId = content["donationId"]
     query = 'UPDATE donation SET pickedUp = 1 WHERE donationId = %d' % (donationId)
     with connection.cursor() as cursor:
         cursor.execute(query)
@@ -141,7 +182,8 @@ def markAsPickedUp():
 
 @app.route("/api/deleteDonation", methods=['POST'])
 def deleteDonation():
-    donationId = 1
+    content = request.json
+    donationId = content["donationId"]
     query = 'DELETE FROM donation WHERE donationId = %d' % (donationId)
     try:
         with connection.cursor() as cursor:
