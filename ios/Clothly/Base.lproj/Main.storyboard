@@ -404,6 +404,104 @@
             </objects>
             <point key="canvasLocation" x="2773.5999999999999" y="22.938530734632685"/>
         </scene>
+        <!--Donation View Controller-->
+        <scene sceneID="hDL-87-zeR">
+            <objects>
+                <viewController storyboardIdentifier="donationViewController" id="xt5-PR-xn8" customClass="DonationViewController" customModule="Clothly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fqi-Fq-9r7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Wt-Tx-E9C">
+                                <rect key="frame" x="0.0" y="60" width="375" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organization Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2d-tZ-PDe">
+                                        <rect key="frame" x="111.5" y="40" width="153.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="KR3-u9-bHh"/>
+                                    <constraint firstItem="f2d-tZ-PDe" firstAttribute="centerY" secondItem="8Wt-Tx-E9C" secondAttribute="centerY" id="R4c-aG-H3b"/>
+                                    <constraint firstItem="f2d-tZ-PDe" firstAttribute="centerX" secondItem="8Wt-Tx-E9C" secondAttribute="centerX" id="iHR-f7-Jgm"/>
+                                </constraints>
+                            </view>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVX-9Z-0Nl">
+                                <rect key="frame" x="0.0" y="160" width="375" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Ges-YN-7oM"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="xt5-PR-xn8" id="E0w-m4-p6P"/>
+                                    <outlet property="delegate" destination="xt5-PR-xn8" id="xIo-Td-WSq"/>
+                                </connections>
+                            </pickerView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Special Instructions" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rw5-nE-EKw">
+                                <rect key="frame" x="0.0" y="320" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ntf-Kg-Jsi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cy8-jg-tfU">
+                                <rect key="frame" x="0.0" y="375" width="375" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="VNc-YD-utf"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="543623678.94879103">
+                                    <!--2018-03-24 22:34:38 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DuA-zc-Fkq">
+                                <rect key="frame" x="101" y="611" width="173" height="47"/>
+                                <color key="backgroundColor" red="0.002877048682" green="0.39081662890000002" blue="0.7480532527" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="173" id="ZgP-Qo-8Gd"/>
+                                    <constraint firstAttribute="height" constant="47" id="g5a-gh-qud"/>
+                                </constraints>
+                                <state key="normal" title="Reserve Pickup">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitPressedWithSender:" destination="xt5-PR-xn8" eventType="touchUpInside" id="XWD-vC-WWt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cy8-jg-tfU" firstAttribute="trailing" secondItem="CtV-Dk-Vjm" secondAttribute="trailing" id="2is-gE-0Bi"/>
+                            <constraint firstItem="DuA-zc-Fkq" firstAttribute="top" secondItem="Cy8-jg-tfU" secondAttribute="bottom" constant="116" id="45P-T1-6h0"/>
+                            <constraint firstItem="CtV-Dk-Vjm" firstAttribute="trailing" secondItem="rw5-nE-EKw" secondAttribute="trailing" id="6Be-e5-HLb"/>
+                            <constraint firstItem="wVX-9Z-0Nl" firstAttribute="trailing" secondItem="CtV-Dk-Vjm" secondAttribute="trailing" id="D61-Yl-B9x"/>
+                            <constraint firstItem="rw5-nE-EKw" firstAttribute="leading" secondItem="CtV-Dk-Vjm" secondAttribute="leading" id="JQY-XA-tWX"/>
+                            <constraint firstItem="wVX-9Z-0Nl" firstAttribute="top" secondItem="8Wt-Tx-E9C" secondAttribute="bottom" id="M8J-G4-ahd"/>
+                            <constraint firstItem="rw5-nE-EKw" firstAttribute="top" secondItem="wVX-9Z-0Nl" secondAttribute="bottom" constant="10" id="N72-n2-jxV"/>
+                            <constraint firstItem="CtV-Dk-Vjm" firstAttribute="trailing" secondItem="8Wt-Tx-E9C" secondAttribute="trailing" id="OZA-hx-PAu"/>
+                            <constraint firstItem="Cy8-jg-tfU" firstAttribute="leading" secondItem="CtV-Dk-Vjm" secondAttribute="leading" id="PJ8-Ea-98E"/>
+                            <constraint firstItem="wVX-9Z-0Nl" firstAttribute="leading" secondItem="CtV-Dk-Vjm" secondAttribute="leading" id="VEE-Ii-Efb"/>
+                            <constraint firstItem="8Wt-Tx-E9C" firstAttribute="top" secondItem="fqi-Fq-9r7" secondAttribute="top" constant="60" id="fHI-I7-JnE"/>
+                            <constraint firstItem="8Wt-Tx-E9C" firstAttribute="leading" secondItem="CtV-Dk-Vjm" secondAttribute="leading" id="irH-IL-Xn4"/>
+                            <constraint firstItem="Cy8-jg-tfU" firstAttribute="top" secondItem="rw5-nE-EKw" secondAttribute="bottom" constant="5" id="snP-1v-U5f"/>
+                            <constraint firstItem="DuA-zc-Fkq" firstAttribute="centerX" secondItem="fqi-Fq-9r7" secondAttribute="centerX" id="zLV-RA-XIZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CtV-Dk-Vjm"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Cy8-jg-tfU" id="mce-hh-q1G"/>
+                        <outlet property="instructionsTextView" destination="rw5-nE-EKw" id="d9y-8h-QFm"/>
+                        <outlet property="orgLabel" destination="f2d-tZ-PDe" id="l4k-d8-1Lb"/>
+                        <outlet property="typePicker" destination="wVX-9Z-0Nl" id="9q3-Pn-ihq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="siC-De-I2N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3445.5999999999999" y="14.842578710644679"/>
+        </scene>
     </scenes>
     <resources>
         <image name="clothly" width="404" height="404"/>

@@ -72,4 +72,21 @@ extension OrganizationPickViewController: UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellData = self.dataSource[indexPath.row]
+        var organization = Organization()
+        organization.name = cellData["orgName"].stringValue
+        organization.type = cellData["orgType"].stringValue
+        organization.id = cellData["orgId"].intValue
+        organization.address = cellData["address"].stringValue
+        organization.city = cellData["city"].stringValue
+        organization.state = cellData["state"].stringValue
+        organization.zip = cellData["zip"].intValue
+        organization.phoneNumber = cellData["phoneNumber"].stringValue
+        organization.emailAddress = cellData["emailAddress"].stringValue
+        let donateViewController = DonationViewController.create()
+        donateViewController.organization = organization
+        self.navigationController?.pushViewController(donateViewController, animated: true)
+    }
 }

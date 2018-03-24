@@ -27,4 +27,14 @@ class DataService {
             }
         }
     }
+    func createDonation(data: [String: Any]) {
+        Alamofire.request(BASE_URL + "createDonation", method: .post, parameters: data, encoding: JSONEncoding.default, headers: [:]).responseString { (response) in
+            switch response.result {
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
