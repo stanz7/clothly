@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3089864E2066398700BADA26 /* DonorSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3089864D2066398700BADA26 /* DonorSignInViewController.swift */; };
+		3089865020663BDF00BADA26 /* AffiliationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3089864F20663BDF00BADA26 /* AffiliationViewController.swift */; };
+		30898652206640F700BADA26 /* OrganizationSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30898651206640F700BADA26 /* OrganizationSignInViewController.swift */; };
 		3DEE1AF820660CC10051A9E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEE1AF720660CC10051A9E7 /* AppDelegate.swift */; };
 		3DEE1AFA20660CC10051A9E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEE1AF920660CC10051A9E7 /* MainViewController.swift */; };
 		3DEE1AFD20660CC10051A9E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEE1AFB20660CC10051A9E7 /* Main.storyboard */; };
@@ -14,8 +17,9 @@
 		3DEE1B0220660CC10051A9E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEE1B0020660CC10051A9E7 /* LaunchScreen.storyboard */; };
 		3DEE1B0D20660CC10051A9E7 /* ClothlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEE1B0C20660CC10051A9E7 /* ClothlyTests.swift */; };
 		3DEE1B1820660CC10051A9E7 /* ClothlyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEE1B1720660CC10051A9E7 /* ClothlyUITests.swift */; };
-		3DEE1B26206622F90051A9E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEE1B25206622F90051A9E7 /* LoginViewController.swift */; };
-		3DEE1B2820662C220051A9E7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEE1B2720662C220051A9E7 /* SignUpViewController.swift */; };
+		58B247183EAC6EF6E62C0AA7 /* Pods_Clothly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74FE5DEF85C7FAA0F21579F7 /* Pods_Clothly.framework */; };
+		8D99F4A90A57E63966655B02 /* Pods_ClothlyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC32C6948F9A85E38821D1FC /* Pods_ClothlyUITests.framework */; };
+		FCDC7E3EA3D940A9E94AD66F /* Pods_ClothlyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD8ECAF1AE01A3F1F9C71BB /* Pods_ClothlyTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C8755B57F13BCDFDB3BEB2A /* Pods-Clothly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clothly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clothly/Pods-Clothly.debug.xcconfig"; sourceTree = "<group>"; };
+		3089864D2066398700BADA26 /* DonorSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorSignInViewController.swift; sourceTree = "<group>"; };
+		3089864F20663BDF00BADA26 /* AffiliationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliationViewController.swift; sourceTree = "<group>"; };
+		30898651206640F700BADA26 /* OrganizationSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationSignInViewController.swift; sourceTree = "<group>"; };
 		3DEE1AF420660CC10051A9E7 /* Clothly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clothly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DEE1AF720660CC10051A9E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DEE1AF920660CC10051A9E7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -49,8 +57,14 @@
 		3DEE1B1320660CC10051A9E7 /* ClothlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClothlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DEE1B1720660CC10051A9E7 /* ClothlyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothlyUITests.swift; sourceTree = "<group>"; };
 		3DEE1B1920660CC10051A9E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3DEE1B25206622F90051A9E7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		3DEE1B2720662C220051A9E7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5DD1947A0C345A47544EA85D /* Pods-ClothlyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClothlyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClothlyTests/Pods-ClothlyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		74FE5DEF85C7FAA0F21579F7 /* Pods_Clothly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clothly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B76D5BA8868CE41142D7475 /* Pods-ClothlyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClothlyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClothlyUITests/Pods-ClothlyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		ADD8ECAF1AE01A3F1F9C71BB /* Pods_ClothlyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClothlyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC32C6948F9A85E38821D1FC /* Pods_ClothlyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClothlyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D279635CEB2E2D8A4281D9C1 /* Pods-ClothlyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClothlyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClothlyTests/Pods-ClothlyTests.release.xcconfig"; sourceTree = "<group>"; };
+		E4036A3170F3BF41C0C4E305 /* Pods-ClothlyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClothlyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClothlyUITests/Pods-ClothlyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F120C3070C235EE3F61AAC4A /* Pods-Clothly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clothly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clothly/Pods-Clothly.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B247183EAC6EF6E62C0AA7 /* Pods_Clothly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCDC7E3EA3D940A9E94AD66F /* Pods_ClothlyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +88,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D99F4A90A57E63966655B02 /* Pods_ClothlyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3089864C2066397600BADA26 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3DEE1AF920660CC10051A9E7 /* MainViewController.swift */,
+				3089864F20663BDF00BADA26 /* AffiliationViewController.swift */,
+				3089864D2066398700BADA26 /* DonorSignInViewController.swift */,
+				30898651206640F700BADA26 /* OrganizationSignInViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		3DEE1AEB20660CC10051A9E7 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +113,8 @@
 				3DEE1B0B20660CC10051A9E7 /* ClothlyTests */,
 				3DEE1B1620660CC10051A9E7 /* ClothlyUITests */,
 				3DEE1AF520660CC10051A9E7 /* Products */,
+				F5AFB3DF6DD293F225BADB5B /* Pods */,
+				938E8F61690172C0CC946A3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +131,12 @@
 		3DEE1AF620660CC10051A9E7 /* Clothly */ = {
 			isa = PBXGroup;
 			children = (
+				3089864C2066397600BADA26 /* Controller */,
 				3DEE1AF720660CC10051A9E7 /* AppDelegate.swift */,
-				3DEE1AF920660CC10051A9E7 /* MainViewController.swift */,
-				3DEE1B25206622F90051A9E7 /* LoginViewController.swift */,
 				3DEE1AFB20660CC10051A9E7 /* Main.storyboard */,
 				3DEE1AFE20660CC10051A9E7 /* Assets.xcassets */,
 				3DEE1B0020660CC10051A9E7 /* LaunchScreen.storyboard */,
 				3DEE1B0320660CC10051A9E7 /* Info.plist */,
-				3DEE1B2720662C220051A9E7 /* SignUpViewController.swift */,
 			);
 			path = Clothly;
 			sourceTree = "<group>";
@@ -131,6 +159,29 @@
 			path = ClothlyUITests;
 			sourceTree = "<group>";
 		};
+		938E8F61690172C0CC946A3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74FE5DEF85C7FAA0F21579F7 /* Pods_Clothly.framework */,
+				ADD8ECAF1AE01A3F1F9C71BB /* Pods_ClothlyTests.framework */,
+				CC32C6948F9A85E38821D1FC /* Pods_ClothlyUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5AFB3DF6DD293F225BADB5B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C8755B57F13BCDFDB3BEB2A /* Pods-Clothly.debug.xcconfig */,
+				F120C3070C235EE3F61AAC4A /* Pods-Clothly.release.xcconfig */,
+				5DD1947A0C345A47544EA85D /* Pods-ClothlyTests.debug.xcconfig */,
+				D279635CEB2E2D8A4281D9C1 /* Pods-ClothlyTests.release.xcconfig */,
+				E4036A3170F3BF41C0C4E305 /* Pods-ClothlyUITests.debug.xcconfig */,
+				9B76D5BA8868CE41142D7475 /* Pods-ClothlyUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DEE1B1C20660CC10051A9E7 /* Build configuration list for PBXNativeTarget "Clothly" */;
 			buildPhases = (
+				3B3FEEFE47B2AF95CBA14AAB /* [CP] Check Pods Manifest.lock */,
 				3DEE1AF020660CC10051A9E7 /* Sources */,
 				3DEE1AF120660CC10051A9E7 /* Frameworks */,
 				3DEE1AF220660CC10051A9E7 /* Resources */,
+				709B8F49766971E38F609F68 /* [CP] Embed Pods Frameworks */,
+				1ED7DE90846FFDC7E4744FDD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,9 +209,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DEE1B1F20660CC10051A9E7 /* Build configuration list for PBXNativeTarget "ClothlyTests" */;
 			buildPhases = (
+				3800D968B55A489FB6B1B4E7 /* [CP] Check Pods Manifest.lock */,
 				3DEE1B0420660CC10051A9E7 /* Sources */,
 				3DEE1B0520660CC10051A9E7 /* Frameworks */,
 				3DEE1B0620660CC10051A9E7 /* Resources */,
+				09CB626036D696E547B65640 /* [CP] Embed Pods Frameworks */,
+				71505159408CBE6F76323E62 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,9 +230,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DEE1B2220660CC10051A9E7 /* Build configuration list for PBXNativeTarget "ClothlyUITests" */;
 			buildPhases = (
+				E033659F9E32CDC923C6EB43 /* [CP] Check Pods Manifest.lock */,
 				3DEE1B0F20660CC10051A9E7 /* Sources */,
 				3DEE1B1020660CC10051A9E7 /* Frameworks */,
 				3DEE1B1120660CC10051A9E7 /* Resources */,
+				54B96B76B3406498E3201DF8 /* [CP] Embed Pods Frameworks */,
+				DF1AA7373E70C7D3FFBA39C2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,15 +320,166 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		09CB626036D696E547B65640 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClothlyTests/Pods-ClothlyTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1ED7DE90846FFDC7E4744FDD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Clothly/Pods-Clothly-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3800D968B55A489FB6B1B4E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ClothlyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B3FEEFE47B2AF95CBA14AAB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Clothly-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54B96B76B3406498E3201DF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClothlyUITests/Pods-ClothlyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		709B8F49766971E38F609F68 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Clothly/Pods-Clothly-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Clothly/Pods-Clothly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71505159408CBE6F76323E62 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClothlyTests/Pods-ClothlyTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF1AA7373E70C7D3FFBA39C2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClothlyUITests/Pods-ClothlyUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E033659F9E32CDC923C6EB43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ClothlyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3DEE1AF020660CC10051A9E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DEE1B26206622F90051A9E7 /* LoginViewController.swift in Sources */,
 				3DEE1AFA20660CC10051A9E7 /* MainViewController.swift in Sources */,
-				3DEE1B2820662C220051A9E7 /* SignUpViewController.swift in Sources */,
+				30898652206640F700BADA26 /* OrganizationSignInViewController.swift in Sources */,
+				3089864E2066398700BADA26 /* DonorSignInViewController.swift in Sources */,
 				3DEE1AF820660CC10051A9E7 /* AppDelegate.swift in Sources */,
+				3089865020663BDF00BADA26 /* AffiliationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +643,7 @@
 		};
 		3DEE1B1D20660CC10051A9E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C8755B57F13BCDFDB3BEB2A /* Pods-Clothly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -446,6 +658,7 @@
 		};
 		3DEE1B1E20660CC10051A9E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F120C3070C235EE3F61AAC4A /* Pods-Clothly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -460,6 +673,7 @@
 		};
 		3DEE1B2020660CC10051A9E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DD1947A0C345A47544EA85D /* Pods-ClothlyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -476,6 +690,7 @@
 		};
 		3DEE1B2120660CC10051A9E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D279635CEB2E2D8A4281D9C1 /* Pods-ClothlyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -492,6 +707,7 @@
 		};
 		3DEE1B2320660CC10051A9E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4036A3170F3BF41C0C4E305 /* Pods-ClothlyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -507,6 +723,7 @@
 		};
 		3DEE1B2420660CC10051A9E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B76D5BA8868CE41142D7475 /* Pods-ClothlyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

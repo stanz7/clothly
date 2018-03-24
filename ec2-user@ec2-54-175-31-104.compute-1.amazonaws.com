@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify, Response, json
 import pymysql.cursors
 import datetime
-import os
 
 app = Flask(__name__)
 connection = pymysql.connect(host="clothly.cxk0kbqodnhw.us-east-1.rds.amazonaws.com", port=3306, db="clothly", user="admin", password="hackerman123")

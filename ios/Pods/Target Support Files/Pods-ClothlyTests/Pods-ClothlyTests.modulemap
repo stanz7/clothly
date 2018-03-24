@@ -1,0 +1,6 @@
+framework module Pods_ClothlyTests {
+  umbrella header "Pods-ClothlyTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
