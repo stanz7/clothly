@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -299,6 +300,103 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bS5-8k-FwR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2076" y="-27"/>
+        </scene>
+        <!--Organization Pick View Controller-->
+        <scene sceneID="ZZg-JB-5gD">
+            <objects>
+                <viewController storyboardIdentifier="organizationPickViewController" id="xVk-np-iLg" customClass="OrganizationPickViewController" customModule="Clothly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KgX-2X-aO9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vnl-Pq-u8X">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrganizationCell" rowHeight="75" id="4Js-c8-UKt" customClass="OrganizationCell" customModule="Clothly" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Js-c8-UKt" id="6aD-Db-SNa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="George's Church" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fec-wE-Vng">
+                                                    <rect key="frame" x="15" y="11" width="345" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="trO-2P-Psx"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Church • 2550 Benson Ave, Brooklyn, NY 11214" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQs-KC-YGZ">
+                                                    <rect key="frame" x="15" y="40" width="345" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="MHd-Df-kbz"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fec-wE-Vng" firstAttribute="top" secondItem="6aD-Db-SNa" secondAttribute="topMargin" id="4gL-cM-ya2"/>
+                                                <constraint firstItem="fec-wE-Vng" firstAttribute="leading" secondItem="6aD-Db-SNa" secondAttribute="leadingMargin" id="5LE-2b-cTd"/>
+                                                <constraint firstItem="ZQs-KC-YGZ" firstAttribute="leading" secondItem="6aD-Db-SNa" secondAttribute="leadingMargin" id="Ceb-3L-TwX"/>
+                                                <constraint firstItem="ZQs-KC-YGZ" firstAttribute="top" secondItem="fec-wE-Vng" secondAttribute="bottom" constant="8" id="D2l-Tj-iGI"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="fec-wE-Vng" secondAttribute="trailing" id="KVZ-Id-cFT"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZQs-KC-YGZ" secondAttribute="trailing" id="wmW-5T-7DQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="ZQs-KC-YGZ" id="LdJ-Ro-FBC"/>
+                                            <outlet property="orgLabel" destination="fec-wE-Vng" id="h3V-WU-oMv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="xVk-np-iLg" id="jsh-X4-LhF"/>
+                                    <outlet property="delegate" destination="xVk-np-iLg" id="Ta8-4Y-NMo"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8l-0i-DcW">
+                                <rect key="frame" x="0.0" y="60" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="2uN-6t-t3s"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a8l-0i-DcW" firstAttribute="top" secondItem="KgX-2X-aO9" secondAttribute="top" constant="60" id="0Gb-hB-bXI"/>
+                            <constraint firstItem="vnl-Pq-u8X" firstAttribute="bottom" secondItem="Ir3-9s-hwF" secondAttribute="bottom" id="D1P-D7-Wz8"/>
+                            <constraint firstItem="vnl-Pq-u8X" firstAttribute="trailing" secondItem="Ir3-9s-hwF" secondAttribute="trailing" id="Q9b-u2-Bhn"/>
+                            <constraint firstItem="vnl-Pq-u8X" firstAttribute="leading" secondItem="Ir3-9s-hwF" secondAttribute="leading" id="Ygf-Cv-yPM"/>
+                            <constraint firstItem="a8l-0i-DcW" firstAttribute="leading" secondItem="Ir3-9s-hwF" secondAttribute="leading" id="bJB-Gt-1CR"/>
+                            <constraint firstItem="vnl-Pq-u8X" firstAttribute="top" secondItem="a8l-0i-DcW" secondAttribute="bottom" id="rmp-Qz-RbV"/>
+                            <constraint firstItem="a8l-0i-DcW" firstAttribute="trailing" secondItem="Ir3-9s-hwF" secondAttribute="trailing" id="zf5-fI-4Ks"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ir3-9s-hwF"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="a8l-0i-DcW" id="snn-ei-bHd"/>
+                        <outlet property="searchDisplayController" destination="J48-P2-hlk" id="jHZ-Ng-OJa"/>
+                        <outlet property="tableView" destination="vnl-Pq-u8X" id="p0A-cI-IfU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Oq-hr-XdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="J48-P2-hlk">
+                    <connections>
+                        <outlet property="delegate" destination="xVk-np-iLg" id="3n9-qf-EP8"/>
+                        <outlet property="searchContentsController" destination="xVk-np-iLg" id="ap1-7i-NSo"/>
+                        <outlet property="searchResultsDataSource" destination="xVk-np-iLg" id="iiG-RV-lRn"/>
+                        <outlet property="searchResultsDelegate" destination="xVk-np-iLg" id="1XK-lS-Cdy"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="2773.5999999999999" y="22.938530734632685"/>
         </scene>
     </scenes>
     <resources>

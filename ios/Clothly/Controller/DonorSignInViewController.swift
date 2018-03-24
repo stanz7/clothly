@@ -29,22 +29,24 @@ class DonorSignInViewController: UIViewController {
         parameters["emailAddress"] = emailAddress as AnyObject
         parameters["password"] = password as AnyObject
         // 54.175.31.104/api/donorLogin
-        Alamofire.request(BASE_URL+"donorLogin", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseString { (response) in
-            if (response.result.isSuccess) {
-                switch response.result {
-                case .failure(let error):
-                    return
-                case .success(let data):
-                    guard let json = data as? [String: AnyObject] else {
-                        return
-                    }
-                    print(json)
-                }
-            } else {
-                print("error")
-            }
-        }
-        
+//        Alamofire.request(BASE_URL+"donorLogin", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseString { (response) in
+//            if (response.result.isSuccess) {
+//                switch response.result {
+//                case .failure(let error):
+//                    return
+//                case .success(let data):
+//                    guard let json = data as? [String: AnyObject] else {
+//                        return
+//                    }
+//                    print(json)
+//                }
+//            } else {
+//                print("error")
+//            }
+//        }
+        let organizationPickController = OrganizationPickViewController.create()
+        self.navigationController?.pushViewController(organizationPickController, animated: true)
+//
         
     }
     

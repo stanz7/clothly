@@ -12,6 +12,8 @@
 		30898652206640F700BADA26 /* OrganizationSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30898651206640F700BADA26 /* OrganizationSignInViewController.swift */; };
 		3089865520664DCA00BADA26 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3089865420664DCA00BADA26 /* LoginManager.swift */; };
 		3089865720664E5200BADA26 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3089865620664E5200BADA26 /* Constants.swift */; };
+		30CFB5D72066EBA0008957B2 /* OrganizationPickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFB5D62066EBA0008957B2 /* OrganizationPickViewController.swift */; };
+		30CFB5D92066EF9C008957B2 /* OrganizationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFB5D82066EF9C008957B2 /* OrganizationCell.swift */; };
 		3DEE1AF820660CC10051A9E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEE1AF720660CC10051A9E7 /* AppDelegate.swift */; };
 		3DEE1AFA20660CC10051A9E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEE1AF920660CC10051A9E7 /* MainViewController.swift */; };
 		3DEE1AFD20660CC10051A9E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEE1AFB20660CC10051A9E7 /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		30898651206640F700BADA26 /* OrganizationSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationSignInViewController.swift; sourceTree = "<group>"; };
 		3089865420664DCA00BADA26 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		3089865620664E5200BADA26 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		30CFB5D62066EBA0008957B2 /* OrganizationPickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationPickViewController.swift; sourceTree = "<group>"; };
+		30CFB5D82066EF9C008957B2 /* OrganizationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationCell.swift; sourceTree = "<group>"; };
 		3DEE1AF420660CC10051A9E7 /* Clothly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clothly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DEE1AF720660CC10051A9E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DEE1AF920660CC10051A9E7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				3089864F20663BDF00BADA26 /* AffiliationViewController.swift */,
 				3089864D2066398700BADA26 /* DonorSignInViewController.swift */,
 				30898651206640F700BADA26 /* OrganizationSignInViewController.swift */,
+				30CFB5D62066EBA0008957B2 /* OrganizationPickViewController.swift */,
+				30CFB5D82066EF9C008957B2 /* OrganizationCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -491,6 +497,8 @@
 			files = (
 				3DEE1AFA20660CC10051A9E7 /* MainViewController.swift in Sources */,
 				30898652206640F700BADA26 /* OrganizationSignInViewController.swift in Sources */,
+				30CFB5D72066EBA0008957B2 /* OrganizationPickViewController.swift in Sources */,
+				30CFB5D92066EF9C008957B2 /* OrganizationCell.swift in Sources */,
 				3089864E2066398700BADA26 /* DonorSignInViewController.swift in Sources */,
 				3DEE1AF820660CC10051A9E7 /* AppDelegate.swift in Sources */,
 				3089865720664E5200BADA26 /* Constants.swift in Sources */,
