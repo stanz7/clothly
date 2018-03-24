@@ -73,7 +73,18 @@ def donorLogin():
     except:
         return Response('Error', status=500)
     if password == correctPassword:
-        return Response('Success', status=200)
+        data = []
+        query = 'SELECT * FROM donor WHERE emailAddress = "%s"' % (email)
+        with connection.cursor(pymysql.cursors.DictCursor) as cursor:
+            cursor.execute(query)
+            data = cursor.fetchall()
+            connection.commit()
+        responseData = {
+            "data": data
+        }
+        js = json.dumps(responseData)
+        resp = Response(js, status=200, mimetype='application/json')
+        return resp
     return Response('Wrong password', status=400)
 
 
@@ -118,7 +129,7 @@ def getPendingDonations():
     content = request.json
     donorId = content["donorId"]
     query = 'SELECT * FROM donation WHERE donorId = %d AND pickedUp = 0' % (donorId)
-    data = []
+    data = {}
     try:
         with connection.cursor(pymysql.cursors.DictCursor) as cursor:
             cursor.execute(query)

@@ -29,8 +29,9 @@ class DonorSignInViewController: UIViewController {
         parameters["emailAddress"] = emailAddress as AnyObject
         parameters["password"] = password as AnyObject
         // 54.175.31.104/api/donorLogin
-        Alamofire.request("http://54.175.31.104/api/donorLogin", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseString { (response) in
+        Alamofire.request(BASE_URL+"/donorLogin", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseString { (response) in
             if (response.result.isSuccess) {
+//                LoginManager.sharedInstance.login(donorId: <#T##Int#>)
                 print("successfully logged in")
 //                move the user to the next screen
             } else {

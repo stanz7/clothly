@@ -10,6 +10,8 @@
 		3089864E2066398700BADA26 /* DonorSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3089864D2066398700BADA26 /* DonorSignInViewController.swift */; };
 		3089865020663BDF00BADA26 /* AffiliationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3089864F20663BDF00BADA26 /* AffiliationViewController.swift */; };
 		30898652206640F700BADA26 /* OrganizationSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30898651206640F700BADA26 /* OrganizationSignInViewController.swift */; };
+		3089865520664DCA00BADA26 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3089865420664DCA00BADA26 /* LoginManager.swift */; };
+		3089865720664E5200BADA26 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3089865620664E5200BADA26 /* Constants.swift */; };
 		3DEE1AF820660CC10051A9E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEE1AF720660CC10051A9E7 /* AppDelegate.swift */; };
 		3DEE1AFA20660CC10051A9E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEE1AF920660CC10051A9E7 /* MainViewController.swift */; };
 		3DEE1AFD20660CC10051A9E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEE1AFB20660CC10051A9E7 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 		3089864D2066398700BADA26 /* DonorSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorSignInViewController.swift; sourceTree = "<group>"; };
 		3089864F20663BDF00BADA26 /* AffiliationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliationViewController.swift; sourceTree = "<group>"; };
 		30898651206640F700BADA26 /* OrganizationSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationSignInViewController.swift; sourceTree = "<group>"; };
+		3089865420664DCA00BADA26 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		3089865620664E5200BADA26 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3DEE1AF420660CC10051A9E7 /* Clothly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clothly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DEE1AF720660CC10051A9E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DEE1AF920660CC10051A9E7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		3089865320664DB500BADA26 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3089865420664DCA00BADA26 /* LoginManager.swift */,
+			);
+			path = "Helper Classes";
+			sourceTree = "<group>";
+		};
 		3DEE1AEB20660CC10051A9E7 = {
 			isa = PBXGroup;
 			children = (
@@ -131,12 +143,14 @@
 		3DEE1AF620660CC10051A9E7 /* Clothly */ = {
 			isa = PBXGroup;
 			children = (
+				3089865320664DB500BADA26 /* Helper Classes */,
 				3089864C2066397600BADA26 /* Controller */,
 				3DEE1AF720660CC10051A9E7 /* AppDelegate.swift */,
 				3DEE1AFB20660CC10051A9E7 /* Main.storyboard */,
 				3DEE1AFE20660CC10051A9E7 /* Assets.xcassets */,
 				3DEE1B0020660CC10051A9E7 /* LaunchScreen.storyboard */,
 				3DEE1B0320660CC10051A9E7 /* Info.plist */,
+				3089865620664E5200BADA26 /* Constants.swift */,
 			);
 			path = Clothly;
 			sourceTree = "<group>";
@@ -479,7 +493,9 @@
 				30898652206640F700BADA26 /* OrganizationSignInViewController.swift in Sources */,
 				3089864E2066398700BADA26 /* DonorSignInViewController.swift in Sources */,
 				3DEE1AF820660CC10051A9E7 /* AppDelegate.swift in Sources */,
+				3089865720664E5200BADA26 /* Constants.swift in Sources */,
 				3089865020663BDF00BADA26 /* AffiliationViewController.swift in Sources */,
+				3089865520664DCA00BADA26 /* LoginManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
