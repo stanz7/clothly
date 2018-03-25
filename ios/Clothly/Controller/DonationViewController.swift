@@ -39,6 +39,11 @@ class DonationViewController: UIViewController {
     }
     
     @IBAction func submitPressed(sender: UIButton) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        var date = datePicker.date
+        var formattedDate = dateFormatter.string(from: date)
+        
         let json: [String: Any] = [
             "orgName": organization.name,
             "type": pickerData[selectedRow],
@@ -47,7 +52,7 @@ class DonationViewController: UIViewController {
             "instructions": instructionsTextView.text,
             "orgId": organization.id,
             "quantity": 10,
-            "pickUpDate": "2018-03-23",
+            "pickUpDate": formattedDate,
             "donorId": 1
         ]
         DataService.sharedInstance.createDonation(data: json)

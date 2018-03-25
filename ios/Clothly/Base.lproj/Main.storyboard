@@ -422,7 +422,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.85394194162436543" green="0.85394194162436543" blue="0.85394194162436543" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="KR3-u9-bHh"/>
                                     <constraint firstItem="f2d-tZ-PDe" firstAttribute="centerY" secondItem="8Wt-Tx-E9C" secondAttribute="centerY" id="R4c-aG-H3b"/>
@@ -431,6 +431,7 @@
                             </view>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVX-9Z-0Nl">
                                 <rect key="frame" x="0.0" y="160" width="375" height="150"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Ges-YN-7oM"/>
                                 </constraints>
@@ -450,6 +451,7 @@
                             </textView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cy8-jg-tfU">
                                 <rect key="frame" x="0.0" y="375" width="375" height="120"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="VNc-YD-utf"/>
                                 </constraints>
@@ -472,7 +474,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.86744151048853912" green="0.86744151048853912" blue="0.86744151048853912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Cy8-jg-tfU" firstAttribute="trailing" secondItem="CtV-Dk-Vjm" secondAttribute="trailing" id="2is-gE-0Bi"/>
                             <constraint firstItem="DuA-zc-Fkq" firstAttribute="top" secondItem="Cy8-jg-tfU" secondAttribute="bottom" constant="116" id="45P-T1-6h0"/>
