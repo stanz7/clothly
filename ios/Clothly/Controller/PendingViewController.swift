@@ -30,7 +30,7 @@ class PendingViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    func getData() {
         var donorId = 1
         var orgId = 1
         let donorJson: [String: Any] = [
@@ -68,6 +68,10 @@ class PendingViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getData()
     }
     
     class func create() -> PendingViewController {
@@ -115,5 +119,44 @@ extension PendingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let cellData = self.dataSource[indexPath.row]
+        let donationId = cellData["donationId"].intValue
+        let json: [String: Any] = [
+            "donationId": donationId
+        ]
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, handler) in
+            DataService.sharedInstance.orgDeleteDonation(data: json, completionHandler: {
+                self.getData()
+            })
+        }
+        deleteAction.backgroundColor = UIColor.red
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        configuration.performsFirstActionWithFullSwipe = false
+        return configuration
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            if appDelegate.status == .org {
+                let cellData = self.dataSource[indexPath.row]
+                let donationId = cellData["donationId"].intValue
+                let json: [String: Any] = [
+                    "donationId": donationId
+                ]
+                let approveAction = UIContextualAction(style: .normal, title: "Approve") { (action, view, handler) in
+                    DataService.sharedInstance.orgMarkDonationPickedUp(data: json, completionHandler: {
+                        self.getData()
+                    })
+                }
+                approveAction.backgroundColor = UIColor.blue
+                let configuration = UISwipeActionsConfiguration(actions: [approveAction])
+                configuration.performsFirstActionWithFullSwipe = false
+                return configuration
+            }
+        }
+        return nil
     }
 }

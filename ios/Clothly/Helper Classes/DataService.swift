@@ -99,4 +99,28 @@ class DataService {
         }
     }
     
+    func orgMarkDonationPickedUp(data: [String:Any], completionHandler: @escaping () -> Void) {
+        Alamofire.request(BASE_URL + "markPickedUp", method: .post, parameters: data, encoding: JSONEncoding.default, headers: [:]).responseString { (response) in
+            switch response.result {
+            case .success(let data):
+                completionHandler()
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func orgDeleteDonation(data: [String:Any], completionHandler: @escaping () -> Void) {
+        Alamofire.request(BASE_URL + "deleteDonation", method: .post, parameters: data, encoding: JSONEncoding.default, headers: [:]).responseString { (response) in
+            switch response.result {
+            case .success(let data):
+                completionHandler()
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
 }
