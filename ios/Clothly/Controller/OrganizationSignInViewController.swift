@@ -21,6 +21,13 @@ class OrganizationSignInViewController: UIViewController {
         passwordField.layer.cornerRadius = 0
     }
     
+    @IBAction func signedInPressed(sender: UIButton) {
+        let mainTabBarController = MainTabBarController.create(status: .org)
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.window?.rootViewController = mainTabBarController
+        }
+    }
+    
     class func create() -> OrganizationSignInViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "organizationSignInViewController") as! OrganizationSignInViewController

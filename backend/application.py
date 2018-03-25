@@ -122,9 +122,11 @@ def organizationLogin():
         return Response('Success', status=200)
     return Response('Wrong password', status=400)
 
-@app.route("/api/getDonors", methods=['GET'])
+@app.route("/api/getDonors", methods=['GET', 'POST'])
 def getAllDonors():
-    query = 'SELECT * FROM donor;'
+    content = request.json
+    orgId = content["orgId"]
+    query = 'SELECT * FROM donation WHERE orgId = %d AND pickedUp = 0;' % (orgId)
     data = []
     try:
         with connection.cursor(pymysql.cursors.DictCursor) as cursor:
@@ -141,6 +143,26 @@ def getAllDonors():
     resp = Response(js, status=200, mimetype='application/json')
     return resp
 
+@app.route("/api/getPastDonors", methods=['GET', 'POST'])
+def getAllPastDonors():
+    content = request.json
+    orgId = content["orgId"]
+    query = 'SELECT * FROM donation WHERE orgId = %d AND pickedUp = 1;' % (orgId)
+    data = []
+    try:
+        with connection.cursor(pymysql.cursors.DictCursor) as cursor:
+            cursor.execute(query)
+            data = cursor.fetchall()
+            connection.commit()
+    except:
+        return Response('Unable to retrieve donors', status=500)
+    responseData = {
+        "data": data,
+        "count": len(data)
+    }
+    js = json.dumps(responseData)
+    resp = Response(js, status=200, mimetype='application/json')
+    return resp
 
 @app.route("/api/getOrganizations", methods=['GET'])
 def getAllOrganizations():
@@ -270,7 +292,25 @@ def addDonation():
     donorId = content["donorId"]
     pointValue = 5 * quantity
     orgName = content["orgName"] 
-    query = 'INSERT INTO donation (type, instructions, orgId, quantity, pickUpDate, donorId, pointValue, orgName) VALUES ("%s", "%s", %d, %d, "%s", %d, %d, "%s");' % (donationType, instructions, orgId, quantity, pickUpDate, donorId, pointValue, orgName)
+
+    query = 'SELECT address, city, state, zip FROM donor WHERE donorId = "%s"' % (donorId)
+    address = ""
+    with connection.cursor() as cursor:
+        cursor.execute(query)
+        addressData = cursor.fetchone()
+        address = " ".join(str(x) for x in addressData)
+        connection.commit()
+    
+    query = 'SELECT firstName, lastName FROM donor WHERE donorId = "%s"' % (
+        donorId)
+    name = ""
+    with connection.cursor() as cursor:
+        cursor.execute(query)
+        nameData = cursor.fetchone()
+        name = " ".join(nameData)
+        connection.commit()
+
+    query = 'INSERT INTO donation (type, instructions, orgId, quantity, pickUpDate, donorId, pointValue, orgName, address, name) VALUES ("%s", "%s", %d, %d, "%s", %d, %d, "%s", "%s", "%s");' % (donationType, instructions, orgId, quantity, pickUpDate, donorId, pointValue, orgName, address, name)
     print(query)
     try:
         with connection.cursor() as cursor:

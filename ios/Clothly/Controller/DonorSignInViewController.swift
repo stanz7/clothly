@@ -47,7 +47,7 @@ class DonorSignInViewController: UIViewController {
 //        let organizationPickController = OrganizationPickViewController.create()
 //        self.navigationController?.pushViewController(organizationPickController, animated: true)
 //
-        let mainTabBarController = MainTabBarController.create()
+        let mainTabBarController = MainTabBarController.create(status: .donor)
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             appDelegate.window?.rootViewController = mainTabBarController
         }

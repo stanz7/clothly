@@ -9,7 +9,13 @@
 import Foundation
 import UIKit
 
+enum AppStatus {
+    case donor
+    case org
+}
+
 class MainTabBarController: UITabBarController {
+    var status: AppStatus!
     var homeViewController: UIViewController!
     var pendingViewController: PendingViewController!
     var historyViewController: PendingViewController!
@@ -65,12 +71,18 @@ class MainTabBarController: UITabBarController {
         
         settingsNavigationController.tabBarItem.title = "SETTINGS"
         
-        navigationControllers = [homeNavigationController, pendingNavigationController, historyNavigationController, settingsNavigationController]
+        if status == .donor {
+            navigationControllers = [homeNavigationController, pendingNavigationController, historyNavigationController, settingsNavigationController]
+        } else {
+            navigationControllers = [pendingNavigationController, historyNavigationController]
+        }
     }
     
-    class func create() -> MainTabBarController {
+    class func create(status: AppStatus) -> MainTabBarController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "mainTabBarController") as! MainTabBarController
+        
+        controller.status = status
         
         let _ = controller.view
         

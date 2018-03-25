@@ -26,6 +26,9 @@ class AffiliationViewController: UIViewController {
     }
     
     @IBAction func donorPressed(sender: UIButton) {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.status = .donor
+        }
         switch status {
         case .login:
             let donorSignInViewController = DonorSignInViewController.create()
@@ -38,6 +41,9 @@ class AffiliationViewController: UIViewController {
     }
     
     @IBAction func organizationPressed(sender: UIButton) {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.status = .org
+        }
         switch status {
         case .login:
             let organizationViewController = OrganizationSignInViewController.create()

@@ -20,7 +20,7 @@ class DonationViewController: UIViewController {
     
     let pickerData: [String] = ["Tops", "Bottoms", "Shoes", "Overalls", "Accessories", "Other"]
     var selectedRow: Int = 0
-    var currentQuantity = 0
+    var currentQuantity = 1
     
     @IBOutlet weak var orgLabel: UILabel!
     @IBOutlet weak var typePicker: UIPickerView!
@@ -57,6 +57,7 @@ class DonationViewController: UIViewController {
             "donorId": 1
         ]
         DataService.sharedInstance.createDonation(data: json)
+        self.tabBarController?.selectedViewController = self.tabBarController?.viewControllers![1]
     }
     
     @IBAction func sliderValueChanged(sender: UISlider) {

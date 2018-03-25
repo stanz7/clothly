@@ -69,4 +69,34 @@ class DataService {
         }
     }
     
+    func orgGetPastDonations(data: [String:Any], complete:@escaping (_ data: JSON) -> Void) {
+        var returnData: JSON? = nil
+        
+        Alamofire.request(BASE_URL + "getPastDonors", method: .post, parameters: data, encoding: JSONEncoding.default, headers: [:]).responseJSON { (response) in
+            switch response.result {
+            case .success(let data):
+                let jsonData = JSON(response.result.value!)
+                returnData = jsonData
+                complete(returnData!)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func orgGetPendingDonations(data: [String:Any], complete:@escaping (_ data: JSON) -> Void) {
+        var returnData: JSON? = nil
+        
+        Alamofire.request(BASE_URL + "getDonors", method: .post, parameters: data, encoding: JSONEncoding.default, headers: [:]).responseJSON { (response) in
+            switch response.result {
+            case .success(let data):
+                let jsonData = JSON(response.result.value!)
+                returnData = jsonData
+                complete(returnData!)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
 }

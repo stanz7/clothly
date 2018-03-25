@@ -32,20 +32,41 @@ class PendingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         var donorId = 1
-        let json: [String: Any] = [
+        var orgId = 1
+        let donorJson: [String: Any] = [
             "donorId": donorId
         ]
-        switch self.type {
-        case .pending:
-            DataService.sharedInstance.getPendingDonations(data: json) { (donations) in
-                self.dataSource = donations["data"].array!
+        let orgJson: [String: Any] = [
+            "orgId": orgId
+        ]
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            if appDelegate.status == .donor {
+                switch self.type {
+                case .pending:
+                    DataService.sharedInstance.getPendingDonations(data: donorJson) { (donations) in
+                        self.dataSource = donations["data"].array!
+                    }
+                case .history:
+                    DataService.sharedInstance.getPastDonations(data: donorJson) { (donations) in
+                        self.dataSource = donations["data"].array!
+                    }
+                default:
+                    break
+                }
+            } else {
+                switch self.type {
+                case .pending:
+                    DataService.sharedInstance.orgGetPendingDonations(data: orgJson) { (donations) in
+                        self.dataSource = donations["data"].array!
+                    }
+                case .history:
+                    DataService.sharedInstance.orgGetPastDonations(data: orgJson) { (donations) in
+                        self.dataSource = donations["data"].array!
+                    }
+                default:
+                    break
+                }
             }
-        case .history:
-            DataService.sharedInstance.getPastDonations(data: json) { (donations) in
-                self.dataSource = donations["data"].array!
-            }
-        default:
-            break
         }
     }
     
@@ -72,12 +93,24 @@ extension PendingViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "donationCell") as? DonationCell else {
             return UITableViewCell()
         }
-        let cellData = self.dataSource[indexPath.row]
-        cell.orgLabel.text = cellData["orgName"].stringValue
-        cell.descriptionLabel.text = "Quantity: \(cellData["quantity"].stringValue) • Type: \(cellData["type"].stringValue) • Points: \(cellData["pointValue"].stringValue)"
-        cell.pickUpLabel.text = "Pick Up Date: \(cellData["pickUpDate"].stringValue)"
-        cell.selectionStyle = .none
-        return cell
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            if appDelegate.status == .donor {
+                let cellData = self.dataSource[indexPath.row]
+                cell.orgLabel.text = cellData["orgName"].stringValue
+                cell.descriptionLabel.text = "Quantity: \(cellData["quantity"].stringValue) • Type: \(cellData["type"].stringValue) • Points: \(cellData["pointValue"].stringValue)"
+                cell.pickUpLabel.text = "Pick Up Date: \(cellData["pickUpDate"].stringValue)"
+                cell.selectionStyle = .none
+                return cell
+            } else {
+                let cellData = self.dataSource[indexPath.row]
+                cell.orgLabel.text = cellData["name"].stringValue
+                cell.descriptionLabel.text = "Quantity: \(cellData["quantity"].stringValue) • Type: \(cellData["type"].stringValue) • Points: \(cellData["pointValue"].stringValue)"
+                cell.pickUpLabel.text = "Pick Up Date: \(cellData["pickUpDate"].stringValue)\nAddress: \(cellData["address"].stringValue)"
+                cell.selectionStyle = .none
+                return cell
+            }
+        }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
