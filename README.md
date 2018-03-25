@@ -15,3 +15,10 @@ that would make donating clothes more accessible. Clothly has both a donor side 
 <p> What sets Clothly apart from other donation applications is the point system gamification as an incentive for people to help those in need. More donations, more points, which may be converted into redeemable rewards with help of sponsors.
 </p>
 <img src="https://i.imgur.com/Pvyz534.png">
+<h4>Technologies Used</h4>
+<ul>
+  <li>Python Flask (Backend API)</li>
+  <li>Swift</li>
+  <li>AWS EC2</li>
+  <li>AWS RDS (MariaDB)</li>
+</ul>
