@@ -21,6 +21,7 @@ class DonationViewController: UIViewController {
     let pickerData: [String] = ["Tops", "Bottoms", "Shoes", "Overalls", "Accessories", "Other"]
     var selectedRow: Int = 0
     var currentQuantity = 1
+    var selectedDate: Date?
     
     @IBOutlet weak var orgLabel: UILabel!
     @IBOutlet weak var typePicker: UIPickerView!
@@ -44,25 +45,31 @@ class DonationViewController: UIViewController {
     @IBAction func submitPressed(sender: UIButton) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-        var date = datePicker.date
-        var formattedDate = dateFormatter.string(from: date)
-        
-        let json: [String: Any] = [
-            "orgName": organization.name,
-            "type": pickerData[selectedRow],
-            "instructions": instructionsTextView.text,
-            "orgId": organization.id,
-            "quantity": currentQuantity,
-            "pickUpDate": formattedDate,
-            "donorId": 1
-        ]
-        DataService.sharedInstance.createDonation(data: json)
-        self.tabBarController?.selectedViewController = self.tabBarController?.viewControllers![1]
+        if let selectedDate = selectedDate {
+            var formattedDate = dateFormatter.string(from: selectedDate)
+            
+            let json: [String: Any] = [
+                "orgName": organization.name,
+                "type": pickerData[selectedRow],
+                "instructions": instructionsTextView.text,
+                "orgId": organization.id,
+                "quantity": currentQuantity,
+                "pickUpDate": formattedDate,
+                "donorId": 1
+            ]
+            DataService.sharedInstance.createDonation(data: json, completionHandler: {
+                self.tabBarController?.selectedViewController = self.tabBarController?.viewControllers![1]
+            })
+        }
     }
     
     @IBAction func sliderValueChanged(sender: UISlider) {
         quantityLabel.text = "\(Int(sender.value))"
         currentQuantity = Int(sender.value)
+    }
+    
+    @IBAction func dateChanged(sender: UIDatePicker) {
+        selectedDate = sender.date
     }
 }
 

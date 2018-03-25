@@ -461,6 +461,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="543623678.94879103">
                                     <!--2018-03-24 22:34:38 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="dateChangedWithSender:" destination="xt5-PR-xn8" eventType="valueChanged" id="diI-PJ-Hv9"/>
+                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DuA-zc-Fkq">
                                 <rect key="frame" x="101" y="590" width="173" height="47"/>

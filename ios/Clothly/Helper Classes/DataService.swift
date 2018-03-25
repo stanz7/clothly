@@ -28,10 +28,11 @@ class DataService {
         }
     }
     
-    func createDonation(data: [String: Any]) {
+    func createDonation(data: [String: Any], completionHandler: @escaping () -> Void) {
         Alamofire.request(BASE_URL + "createDonation", method: .post, parameters: data, encoding: JSONEncoding.default, headers: [:]).responseString { (response) in
             switch response.result {
             case .success(let data):
+                completionHandler()
                 print(data)
             case .failure(let error):
                 print(error)
