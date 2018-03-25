@@ -1,0 +1,23 @@
+#home {
+  padding:20px;
+  text-align:center;
+}
+
+.nav-link {
+}
+
+.jumbotron {
+  background-image:url('../../assets/img/nature6.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
+  height:700px;
+}
+
+#Logo {
+  font-size:48px;
+}
+
+#button {
+  margin:20px;
+}
+
