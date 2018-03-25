@@ -43,8 +43,8 @@ class DonationViewController: UIViewController {
             "type": pickerData[selectedRow],
             "gender": "Male",
             "ageGroup": "Youth",
-            "instructions": "N/A",
-            "orgId": 1,
+            "instructions": instructionsTextView.text,
+            "orgId": organization.id,
             "quantity": 10,
             "pickUpDate": "2018-03-23",
             "donorId": 1

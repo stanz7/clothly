@@ -144,7 +144,7 @@ def getAllOrganizations():
     resp = Response(js, status=200, mimetype='application/json')
     return resp
 
-@app.route("/api/getPendingDonations", methods=['GET'])
+@app.route("/api/getPendingDonations", methods=['GET', 'POST'])
 def getPendingDonations():
     content = request.json
     donorId = content["donorId"]

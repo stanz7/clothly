@@ -44,9 +44,13 @@ class DonorSignInViewController: UIViewController {
 //                print("error")
 //            }
 //        }
-        let organizationPickController = OrganizationPickViewController.create()
-        self.navigationController?.pushViewController(organizationPickController, animated: true)
+//        let organizationPickController = OrganizationPickViewController.create()
+//        self.navigationController?.pushViewController(organizationPickController, animated: true)
 //
+        let mainTabBarController = MainTabBarController.create()
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.window?.rootViewController = mainTabBarController
+        }
         
     }
     

@@ -40,7 +40,7 @@ class OrganizationPickViewController: UIViewController {
     }
 }
 
-extension OrganizationPickViewController: UITableViewDelegate, UITableViewDataSource {
+extension OrganizationPickViewController: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
