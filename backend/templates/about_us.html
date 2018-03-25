@@ -8,26 +8,27 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Contact-Form-Clean.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Baumans|Lato" rel="stylesheet">
 </head>
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md">
-        <div class="container-fluid"><a class="navbar-brand" href="#" id="Logo">Clothly</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container-fluid"><a style = "font-weight:bold;font-family: 'Baumans', cursive;" class="navbar-brand" href="#" id="Logo">Clothly</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="/">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/donations">Donations</a></li>
+
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/contact">Contact Us</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/about"">About Us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/about">About Us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div id="home">
-        <div class="jumbotron">
-            <h1>About Us</h1>
-            <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+        <div style = "background-image: url({{ url_for('static', filename='../static/img/hand.jpg') }})" class="jumbotron">
+            <h1 style = "font-family: 'Lato', sans-serif">About Us</h1>
+            <p style = "font-family: 'Lato', sans-serif">Clothly is an interactive clothing donation application that bridges the communication between local donors and organizations</p>
         </div>
         <nav class="navbar navbar-light navbar-expand-md float-right">
             <div class="container-fluid"><a class="navbar-brand" href="#">Home</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-2"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>

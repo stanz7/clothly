@@ -10,6 +10,7 @@
   background-size:cover;
   background-repeat:no-repeat;
   height:700px;
+  background-image: url('../img/donate.jpg');
 }
 
 #Logo {
@@ -19,4 +20,3 @@
 #button {
   margin:20px;
 }
-

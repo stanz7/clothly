@@ -23,10 +23,6 @@ def contact():
     return render_template("contact_us.html")
 
 
-@app.route("/donations")
-def donations():
-    return render_template("donations.html")
-
 @app.route("/api/createDonor", methods=['GET', 'POST'])
 def donorRegister():
     content = request.json
@@ -311,7 +307,6 @@ def addDonation():
         connection.commit()
 
     query = 'INSERT INTO donation (type, instructions, orgId, quantity, pickUpDate, donorId, pointValue, orgName, address, name) VALUES ("%s", "%s", %d, %d, "%s", %d, %d, "%s", "%s", "%s");' % (donationType, instructions, orgId, quantity, pickUpDate, donorId, pointValue, orgName, address, name)
-    print(query)
     try:
         with connection.cursor() as cursor:
             cursor.execute(query)
