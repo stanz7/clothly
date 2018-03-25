@@ -18,7 +18,8 @@ class SettingViewController: UIViewController {
     
     @IBAction func LogOutPressed(_ sender: UIButton) {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            appDelegate.window?.rootViewController = MainViewController.create()
+            let mainNavigationController = UINavigationController(rootViewController: MainViewController.create())
+            appDelegate.window?.rootViewController = mainNavigationController
         }
     }
     
