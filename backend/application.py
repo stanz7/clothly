@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, Response, json
+from flask import render_template, redirect
 import pymysql.cursors
 import datetime
 import os
@@ -6,9 +7,25 @@ import os
 app = Flask(__name__)
 connection = pymysql.connect(host="clothly.cxk0kbqodnhw.us-east-1.rds.amazonaws.com", port=3306, db="clothly", user="admin", password="hackerman123")
 
+# route index page
 @app.route("/")
 def home():
-    return Response('No Content', status=204)
+    return render_template("index.html")
+
+
+@app.route("/about")
+def about():
+    return render_template("about_us.html")
+
+
+@app.route("/contact")
+def contact():
+    return render_template("contact_us.html")
+
+
+@app.route("/donations")
+def donations():
+    return render_template("donations.html")
 
 @app.route("/api/createDonor", methods=['GET', 'POST'])
 def donorRegister():
