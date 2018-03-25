@@ -20,12 +20,15 @@ class DonationViewController: UIViewController {
     
     let pickerData: [String] = ["Tops", "Bottoms", "Shoes", "Overalls", "Accessories", "Other"]
     var selectedRow: Int = 0
+    var currentQuantity = 0
     
     @IBOutlet weak var orgLabel: UILabel!
     @IBOutlet weak var typePicker: UIPickerView!
-    @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var instructionsTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var quantitySlider: UISlider!
+    @IBOutlet weak var quantityLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,11 +52,16 @@ class DonationViewController: UIViewController {
             "type": pickerData[selectedRow],
             "instructions": instructionsTextView.text,
             "orgId": organization.id,
-            "quantity": 10,
+            "quantity": currentQuantity,
             "pickUpDate": formattedDate,
             "donorId": 1
         ]
         DataService.sharedInstance.createDonation(data: json)
+    }
+    
+    @IBAction func sliderValueChanged(sender: UISlider) {
+        quantityLabel.text = "\(Int(sender.value))"
+        currentQuantity = Int(sender.value)
     }
 }
 
