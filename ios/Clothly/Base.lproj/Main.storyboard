@@ -562,6 +562,60 @@
             </objects>
             <point key="canvasLocation" x="4153" y="23"/>
         </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="tyu-WZ-7L6">
+            <objects>
+                <viewController storyboardIdentifier="settingViewController" id="b2t-t2-CTd" customClass="SettingViewController" customModule="Clothly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="trg-df-lIY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaW-Bq-XQu">
+                                <rect key="frame" x="0.0" y="557" width="375" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.25139345508955413" blue="0.083717165758792067" alpha="0.74154537671232879" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="yho-gz-S5k"/>
+                                </constraints>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="0.99371695640000002" green="0.98378626930000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWR-n9-rOh">
+                                <rect key="frame" x="16" y="95" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgQ-L0-Y2x">
+                                <rect key="frame" x="16" y="169" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="p5D-C1-bVN" firstAttribute="trailing" secondItem="lWR-n9-rOh" secondAttribute="trailing" constant="16" id="Sid-ud-mZ0"/>
+                            <constraint firstItem="lWR-n9-rOh" firstAttribute="leading" secondItem="p5D-C1-bVN" secondAttribute="leading" constant="16" id="Sok-rc-Q7I"/>
+                            <constraint firstItem="qaW-Bq-XQu" firstAttribute="leading" secondItem="p5D-C1-bVN" secondAttribute="leading" id="dTD-9z-bvk"/>
+                            <constraint firstItem="wgQ-L0-Y2x" firstAttribute="leading" secondItem="p5D-C1-bVN" secondAttribute="leading" constant="16" id="dVo-NX-IGx"/>
+                            <constraint firstItem="qaW-Bq-XQu" firstAttribute="top" secondItem="wgQ-L0-Y2x" secondAttribute="bottom" constant="367" id="f7i-qM-egR"/>
+                            <constraint firstItem="qaW-Bq-XQu" firstAttribute="trailing" secondItem="p5D-C1-bVN" secondAttribute="trailing" id="hdT-ue-EaF"/>
+                            <constraint firstItem="p5D-C1-bVN" firstAttribute="trailing" secondItem="wgQ-L0-Y2x" secondAttribute="trailing" constant="16" id="hrr-Xd-QfR"/>
+                            <constraint firstItem="p5D-C1-bVN" firstAttribute="bottom" secondItem="qaW-Bq-XQu" secondAttribute="bottom" constant="66" id="vK4-W1-yRe"/>
+                            <constraint firstItem="lWR-n9-rOh" firstAttribute="top" secondItem="p5D-C1-bVN" secondAttribute="top" constant="75" id="y3r-tI-hTk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="p5D-C1-bVN"/>
+                    </view>
+                    <connections>
+                        <outlet property="Donations" destination="wgQ-L0-Y2x" id="KQD-8D-kDI"/>
+                        <outlet property="Points" destination="lWR-n9-rOh" id="DYM-6I-gOU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vvC-yj-D1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4196" y="715.59220389805103"/>
+        </scene>
         <!--Pending View Controller-->
         <scene sceneID="lnJ-2a-J1r">
             <objects>

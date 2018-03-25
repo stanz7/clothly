@@ -19,6 +19,7 @@
 		30CFB5DF20671348008957B2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFB5DE20671348008957B2 /* MainTabBarController.swift */; };
 		30CFB5E12067165E008957B2 /* PendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFB5E02067165E008957B2 /* PendingViewController.swift */; };
 		30CFB5E520671BC3008957B2 /* DonationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFB5E420671BC3008957B2 /* DonationCell.swift */; };
+		3D021DC9206751EC00A5A54C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D021DC8206751EC00A5A54C /* SettingViewController.swift */; };
 		3DEE1AF820660CC10051A9E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEE1AF720660CC10051A9E7 /* AppDelegate.swift */; };
 		3DEE1AFA20660CC10051A9E7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEE1AF920660CC10051A9E7 /* MainViewController.swift */; };
 		3DEE1AFD20660CC10051A9E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEE1AFB20660CC10051A9E7 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		30CFB5DE20671348008957B2 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		30CFB5E02067165E008957B2 /* PendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingViewController.swift; sourceTree = "<group>"; };
 		30CFB5E420671BC3008957B2 /* DonationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationCell.swift; sourceTree = "<group>"; };
+		3D021DC8206751EC00A5A54C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		3DEE1AF420660CC10051A9E7 /* Clothly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clothly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DEE1AF720660CC10051A9E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DEE1AF920660CC10051A9E7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				30CFB5DE20671348008957B2 /* MainTabBarController.swift */,
 				30CFB5E02067165E008957B2 /* PendingViewController.swift */,
 				30CFB5E420671BC3008957B2 /* DonationCell.swift */,
+				3D021DC8206751EC00A5A54C /* SettingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				30CFB5DF20671348008957B2 /* MainTabBarController.swift in Sources */,
 				30CFB5D72066EBA0008957B2 /* OrganizationPickViewController.swift in Sources */,
 				30CFB5E12067165E008957B2 /* PendingViewController.swift in Sources */,
+				3D021DC9206751EC00A5A54C /* SettingViewController.swift in Sources */,
 				30CFB5E520671BC3008957B2 /* DonationCell.swift in Sources */,
 				30CFB5D92066EF9C008957B2 /* OrganizationCell.swift in Sources */,
 				3089864E2066398700BADA26 /* DonorSignInViewController.swift in Sources */,

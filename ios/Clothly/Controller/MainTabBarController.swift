@@ -19,7 +19,7 @@ class MainTabBarController: UITabBarController {
     var homeViewController: UIViewController!
     var pendingViewController: PendingViewController!
     var historyViewController: PendingViewController!
-    var settingsViewController: UIViewController!
+    var settingsViewController: SettingViewController!
     
     var navigationControllers: [UINavigationController] = []
     
@@ -51,7 +51,7 @@ class MainTabBarController: UITabBarController {
         historyViewController.view.backgroundColor = UIColor.white
         historyViewController.navigationItem.title = "HISTORY"
         
-        settingsViewController = UIViewController()
+        settingsViewController = SettingViewController.create()
         settingsViewController.tabBarItem.image = UIImage(named: "settings")
         settingsViewController.view.backgroundColor = UIColor.white
         settingsViewController.navigationItem.title = "SETTINGS"
