@@ -205,14 +205,12 @@ def getPastDonations():
 def updateDonation():
     content = request.json
     donationType = content["type"]
-    gender = content["gender"]
-    ageGroup = content["ageGroup"]
     instructions = content["instructions"]
     quantity = content["quantity"]
     pickUpDate = content["pickUpDate"]
     donationId = content["donationId"]
 
-    query = 'UPDATE donation SET type = "%s", gender = "%s", ageGroup = "%s", instructions = "%s", quantity = %d, pickUpDate ="%s" WHERE donationId = %d' % (donationType, gender, ageGroup, instructions, quantity, pickUpDate, donationId)
+    query = 'UPDATE donation SET type = "%s", instructions = "%s", quantity = %d, pickUpDate ="%s" WHERE donationId = %d' % (donationType, instructions, quantity, pickUpDate, donationId)
     try:
         with connection.cursor() as cursor:
             cursor.execute(query)
@@ -265,8 +263,6 @@ def deleteDonation():
 def addDonation():
     content = request.json
     donationType = content["type"]
-    gender = content["gender"]
-    ageGroup = content["ageGroup"]
     instructions = content["instructions"]
     orgId = content["orgId"]
     quantity = content["quantity"]
@@ -274,7 +270,7 @@ def addDonation():
     donorId = content["donorId"]
     pointValue = 5 * quantity
     orgName = content["orgName"] 
-    query = 'INSERT INTO donation (type, gender, agegroup, instructions, orgId, quantity, pickUpDate, donorId, pointValue, orgName) VALUES ("%s", "%s", "%s", "%s", %d, %d, "%s", %d, %d, "%s");' % (donationType, gender, ageGroup, instructions, orgId, quantity, pickUpDate, donorId, pointValue, orgName)
+    query = 'INSERT INTO donation (type, instructions, orgId, quantity, pickUpDate, donorId, pointValue, orgName) VALUES ("%s", "%s", %d, %d, "%s", %d, %d, "%s");' % (donationType, instructions, orgId, quantity, pickUpDate, donorId, pointValue, orgName)
     print(query)
     try:
         with connection.cursor() as cursor:

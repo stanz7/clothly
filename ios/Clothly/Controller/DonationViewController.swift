@@ -47,8 +47,6 @@ class DonationViewController: UIViewController {
         let json: [String: Any] = [
             "orgName": organization.name,
             "type": pickerData[selectedRow],
-            "gender": "Male",
-            "ageGroup": "Youth",
             "instructions": instructionsTextView.text,
             "orgId": organization.id,
             "quantity": 10,
