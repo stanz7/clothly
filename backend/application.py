@@ -321,6 +321,33 @@ def addDonation():
     return Response('Success', status=200)
 
 
+@app.route("/api/getDonorInfo", methods=['POST'])
+def getDonorInfo():
+    content = request.json
+    donorId = content["donorId"]
+    query = 'SELECT COUNT(*) FROM donation WHERE donorId = %d' % (donorId)
+    totalDonations = 0
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(query)
+            totalDonations = cursor.fetchone()[0]
+    except:
+        return Response('Unable to retrieve data', status=500)
+    query = 'SELECT points FROM donor WHERE donorId = %d;' % (donorId)
+    points = 0
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(query)
+            points = cursor.fetchone()[0]
+    except:
+        return Response('Unable to retrieve data', status=500)
+    responseData = {
+        "totalDonations": totalDonations,
+        "points": points
+    }
+    js = json.dumps(responseData)
+    return Response(js, status=200, mimetype='application/json')
+
 if __name__ == "__main__":
     app.run(
     host=os.getenv('LISTEN', '0.0.0.0'),
