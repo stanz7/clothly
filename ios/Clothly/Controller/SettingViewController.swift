@@ -16,6 +16,12 @@ class SettingViewController: UIViewController {
     
     @IBOutlet weak var Donations: UILabel!
     
+    @IBAction func LogOutPressed(_ sender: UIButton) {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.window?.rootViewController = MainViewController.create()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         var donorId = 1
