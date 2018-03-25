@@ -40,6 +40,7 @@ class DonationViewController: UIViewController {
     
     @IBAction func submitPressed(sender: UIButton) {
         let json: [String: Any] = [
+            "orgName": organization.name,
             "type": pickerData[selectedRow],
             "gender": "Male",
             "ageGroup": "Youth",

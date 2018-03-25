@@ -213,6 +213,22 @@ def markAsPickedUp():
     with connection.cursor() as cursor:
         cursor.execute(query)
         connection.commit()
+    query = 'SELECT pointValue, donorId FROM donation WHERE donationId = %d' % (donationId)
+    pointValue = 0
+    donorId = 0
+    with connection.cursor() as cursor:
+        cursor.execute(query)
+        data = cursor.fetchone()
+        pointValue = data[0]
+        donorId = data[1]
+        connection.commit()
+    query = 'UPDATE donor SET points = points + %d WHERE donorId = %d' % (pointValue, donorId)
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(query)
+            connection.commit()
+    except:
+        return Response('Unable to mark as picked up', status=500)
     return Response('Success', status=200)
 
 @app.route("/api/deleteDonation", methods=['POST'])
@@ -239,7 +255,10 @@ def addDonation():
     quantity = content["quantity"]
     pickUpDate = content["pickUpDate"]
     donorId = content["donorId"]
-    query = 'INSERT INTO donation (type, gender, agegroup, instructions, orgId, quantity, pickUpDate, donorId) VALUES ("%s", "%s", "%s", "%s", %d, %d, "%s", %d);' % (donationType, gender, ageGroup, instructions, orgId, quantity, pickUpDate, donorId)
+    pointValue = 5 * quantity
+    orgName = content["orgName"] 
+    query = 'INSERT INTO donation (type, gender, agegroup, instructions, orgId, quantity, pickUpDate, donorId, pointValue, orgName) VALUES ("%s", "%s", "%s", "%s", %d, %d, "%s", %d, %d, "%s");' % (donationType, gender, ageGroup, instructions, orgId, quantity, pickUpDate, donorId, pointValue, orgName)
+    print(query)
     try:
         with connection.cursor() as cursor:
             cursor.execute(query)

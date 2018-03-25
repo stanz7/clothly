@@ -74,7 +74,7 @@ extension PendingViewController: UITableViewDelegate, UITableViewDataSource {
         }
         let cellData = self.dataSource[indexPath.row]
         cell.orgLabel.text = cellData["orgName"].stringValue
-        cell.descriptionLabel.text = "Quantity: \(cellData["quantity"].stringValue) • Type: \(cellData["type"].stringValue)"
+        cell.descriptionLabel.text = "Quantity: \(cellData["quantity"].stringValue) • Type: \(cellData["type"].stringValue) • Points: \(cellData["pointValue"].stringValue)"
         cell.pickUpLabel.text = "Pick Up Date: \(cellData["pickUpDate"].stringValue)"
         cell.selectionStyle = .none
         return cell
