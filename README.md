@@ -1,7 +1,9 @@
 <h1>Clothly</h1>
-<h4>Problem</h4>
+
+<h2> HackNYU 2018 Winner! </h2>
+<h4><b> The Problem</b></h4>
 <p>
-Clothing end up not being deployed correctly to locations due to poor communication between donors and organizations. Clothing should be donated instead of being thrown out because it takes up too much landfill space or clothing just doesn’t get recycled. EPA estimates 3.8 billion pounds of textile waste recycled, accounts only 15% of all waste, leaving for 85% of all clothing being left in landfills or in other words, wasted. According to a recent study from 2017 Giving Report, "when asked which fundraising concept donors would most like use, donors responded that 66% would prefer a mobile app that would automate the donation process." 
+Clothing ends up being deployed incorrectly to charitable locations due to poor communication between donors and organizations. Clothing should be donated instead of being thrown out because it takes up landfill space that could go to something more appropriate. Used clothing can be used to alleviate survivors of natural disasters as well as the less fortunate. EPA estimates 3.8 billion pounds of textile waste recycled, accounts only 15% of all waste, leaving for 85% of all clothing being left in landfills or in other words, wasted. According to a recent study from 2017 Giving Report, "when asked which fundraising concept donors would most like use, donors responded that 66% would prefer a mobile app that would automate the donation process."
 </p>
 <p>
 Clothing donation boxes are unreliable in that some of these are misleading and the clothing doesn’t actually get donated but sold to distributor or foreign countries.
